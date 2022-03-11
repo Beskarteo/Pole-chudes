@@ -42,8 +42,8 @@ for i in range(chislo_popit):
                 if zero_index > len_vibr_sl or zero_index == len_vibr_sl:
                     zero_index = len_vibr_sl -1
                 else:
-                    if vvod == vibr_sl[x]:
-                        tek_sim = vibr_sl[x]
+                    if vvod == vibr_sl[zero_index]:
+                        tek_sim = vibr_sl[zero_index]
                     else:
                         tek_sim = '*'
                     ugad_sl += tek_sim
