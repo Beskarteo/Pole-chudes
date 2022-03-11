@@ -88,5 +88,5 @@ for i in range(chislo_popit):
     else:
         print(zanovo, napom)
 
-# трата попытки
-popit += 1                  
+    # трата попытки
+    popit += 1                  
