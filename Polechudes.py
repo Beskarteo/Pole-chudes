@@ -35,71 +35,57 @@ for i in range(chislo_popit):
         # проверка, на то что буква в слове
         if vvod in vibr_sl:
             
-            # печать слова с отгаданными буквами
+            # собирание слова с угаданными буквами
             for s in range(len_vibr_sl):
                 
                 # проверка, на то что индекс за пределами строки
                 if zero_index > len_vibr_sl or zero_index == len_vibr_sl:
-                    
-                    # ввод числа для индекса в пределы индекса
                     zero_index = len_vibr_sl -1
                 else:
-                    
-                    # поиск введенной буквы в слове
                     if vvod == vibr_sl[x]:
                         tek_sim = vibr_sl[x]
                     else:
                         tek_sim = '*'
-                        
-                    # собирание слова с угаданными буквами
                     ugad_sl += tek_sim
                     zero_index += 1
-                    
+
             # печать слова с угаданными буквами
             print(ugad_sl, end=('\n'))
-            
+
             # обнуление индекса
             zero_index = 0
-            
+
             # проверка на победу
             if ugad_sl == vibr_sl:
                 print('Ура вы победили! Вам пондобилось', popit, 'попыток.')
-                
-                # выход из основного цикла при победе
                 break                   
-            else:
-                
-                # ввод последнего символа
-                if tek_sim != '*':
-                    ugad_sl += tek_sim
-                    
+
             # обнуление переменных
             ugad_sl = ''
             tek_sim = ''
         else:
             print(zanovo , napom)
-            
+
     # проверка на попытку угадать слово
     elif len(vvod) == len_vibr_sl and '#' not in vvod:
-        
+
         # проверка на победу 2
         if vvod == vibr_sl:
             print('Ура вы победили! Вам понадобилось', popit, 'попыток.')
+            break
         else:
             print(zanovo, napom)
-            
+
     # проверка на ввод #help
     elif '#help' in vvod:
         print(napom)
-        
+
     # проверка на ввод #сдаться
     elif '#сдаться' in vvod:
         print('Увы вы проиграли(((')
-        
-        # выход из основного цикла при поражении
         break
     else:
         print(zanovo, napom)
-        
+
     # трата попытки
     popit += 1                  
